@@ -5,8 +5,8 @@
   "main": "lib/index.js",
   "scripts": {
     "clean": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js",
-    "lint": "eslint --ext .js,.jsx .",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.production.js && sed -i 's#/dist/#\\./dist/#g' dist/bundle.js",
+    "lint": "prettier --write 'presentation/**/*.js'",
     "deploy": "npm run clean & npm run build && surge -p .",
     "export": "spectacle-renderer --delay 3000",
     "start": "cross-env NODE_ENV=development node server.js"
@@ -49,6 +49,7 @@
     "is-buffer": "^1.1.5",
     "markdown-loader": "^2.0.1",
     "node-libs-browser": "^2.0.0",
+    "prettier": "^1.10.2",
     "raw-loader": "^0.5.1",
     "react-hot-loader": "^3.1.1",
     "react-transform-catch-errors": "^1.0.2",
@@ -61,5 +62,14 @@
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.9.3",
     "webpack-hot-middleware": "^2.20.0"
+  },
+  "prettier": {
+    "parser": "flow",
+    "bracketSpacing": true,
+    "singleQuote": true,
+    "jsxBracketSameLine": true,
+    "trailing-comma": "all",
+    "printWidth": 100,
+    "tabWidth": 4
   }
 }
