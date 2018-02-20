@@ -65,15 +65,15 @@ export default class Presentation extends React.Component {
                     <Heading size={2} textColor="black">i18n vs l10n</Heading>
                 </Slide>
                 <Slide bgColor="white" notes="Clés de traduction">
-                    <Heading size={3} textColor="black">i18n - Internationali(z|s)ation</Heading>
+                    <Heading size={3} textColor="black">i18n – Internationali(z|s)ation</Heading>
                     <Text style={{marginTop: 50}}>
                         Préparation technique d'une application en vue d'un déploiement dans plusieurs langues et cultures
                     </Text>
                 </Slide>
                 <Slide bgColor="white" notes="Traduction des clés">
-                    <Heading size={3} textColor="black">l10n - Localization (régionalisation)</Heading>
+                    <Heading size={3} textColor="black">l10n – Localization (régionalisation)</Heading>
                     <Text style={{marginTop: 50}}>
-                        Traduction de l'interface utilisateur dans une ou plusieurs langue/cultures
+                        Traduction de l'interface utilisateur dans une ou plusieurs langues/cultures
                     </Text>
                 </Slide>
                 <Slide bgColor="white">
@@ -177,7 +177,7 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">L'Organisation</Heading>
-                    <Heading size={2} caps textColor="black">PHP-Translation</Heading>
+                    <Heading size={2} caps textColor="black">PHP–Translation</Heading>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Outils PHP pour la gestion de l'i18n</Heading>
@@ -190,7 +190,7 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide bgColor="white">
-                    <Heading size={3} caps textColor="black">php-translation</Heading>
+                    <Heading size={3} caps textColor="black">php–translation</Heading>
                     <List style={{marginTop: 50}}>
                         <ListItem padding={"20px 0"}>Support de plusieurs SaaS comme Transifex, Loco, PhraseApp</ListItem>
                         <ListItem padding={"20px 0"}>Framework agnostic : Package PHP, bundle Symfony, package Laravel ...</ListItem>
@@ -206,7 +206,7 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide bgColor="white">
-                    <Heading size={3} caps textColor="black">SaaS + php-translation = 😍</Heading>
+                    <Heading size={3} caps textColor="black">SaaS + php–translation = 😍</Heading>
                     <Heading size={4} caps textColor="black" style={{marginTop: 50}}>On règle les problèmes</Heading>
                     <List>
                         <ListItem padding={"20px 0"}>Stockage: on stocke sur le SaaS <strong>et</strong> on synchronise les fichiers locaux (*.xliff)</ListItem>
@@ -225,7 +225,7 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Si on va encore plus loin</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters à php-translation (lingohub, poeditor, redis, propel, doctrine ...)</ListItem>
+                        <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters à php–translation (lingohub, poeditor, redis, propel, doctrine ...)</ListItem>
                         <ListItem padding={"20px 0"}>Faire évoluer les outils d'éditon (Profiler notamment)</ListItem>
                     </List>
                 </Slide>
@@ -244,7 +244,7 @@ export default class Presentation extends React.Component {
                     <Text style={{marginTop: 50}}>Si vous avez besoin de traduire votre application</Text>
                     <List>
                         <ListItem padding={"20px 0"}>Choissisez un SaaS</ListItem>
-                        <ListItem padding={"20px 0"}>Installez php-translation/symfony-bundle</ListItem>
+                        <ListItem padding={"20px 0"}>Installez php–translation/symfony–bundle</ListItem>
                         <ListItem padding={"20px 0"}>Utilisez ou créez un Storage Adapater</ListItem>
                         <ListItem padding={"20px 0"}>Expliquez à chacun l'outil qui lui est destiné et le workflow complet</ListItem>
                     </List>
