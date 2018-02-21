@@ -88,36 +88,11 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={1} caps textColor="black">Traduction de l'interface</Heading>
                 </Slide>
-                <Slide bgColor="white">
-                    <Heading size={1} caps textColor="black">Comment font les CMS ?</Heading>
-                    <Text style={{marginTop: 100}}>Wordpress, Drupal ...</Text>
+                <Slide bgColor="white" notes="ça à l'air simple, mais ...">
+                    <Heading size={1} caps textColor="black">Traduire une application ? Facile</Heading>
                 </Slide>
                 <Slide bgColor="white">
-                    <Text><S type="bold">Recommandations aux développeurs de modules/plugins :</S></Text>
-                    <Layout>
-                        <Fill>
-                            <List>
-                                <ListItem padding={"20px 0"}>i18n leur code</ListItem>
-                                <ListItem padding={"20px 0"}>l10n dans au moins une langue (anglais)</ListItem>
-                            </List>
-                        </Fill>
-                    </Layout>
-                </Slide>
-                <Slide bgColor="white">
-                    <Text style={{marginTop: 50}}><S type="bold">Chacun a une plateforme de contribution pour la l10n</S></Text>
-                    <List>
-                        <ListItem padding={"20px 0"}>
-                            <Link href={"https://translate.wordpress.org/"} target={"_blank"}>https://translate.wordpress.org/</Link>
-                        </ListItem>
-                        <ListItem padding={"20px 0"}>
-                            <Link href={"https://localize.drupal.org/"} target={"_blank"}>https://localize.drupal.org/</Link>
-                        </ListItem>
-                    </List>
-                    <Text style={{marginTop: 75}}><S type="bold">Fichiers .po et gettext</S></Text>
-                </Slide>
-                <Slide bgColor="white">
-                    <Heading size={1} style={{marginBottom: 50}}>🚀</Heading>
-                    <Heading size={1} caps textColor="black">Mettre en place la traduction</Heading>
+                    <Heading size={1}>🤔</Heading>
                 </Slide>
                 <Slide bgColor="white" notes="pas tous techniques">
                     <Heading size={1} style={{marginBottom: 50}}>👥 🗣 👤</Heading>
@@ -174,7 +149,7 @@ export default class Presentation extends React.Component {
                     </List>
                 </Slide>
                 <Slide bgColor="white">
-                    <Image src={images.putain} width={'800px'} style={{marginTop: 50}}></Image>
+                    <Image src={images.omg} width={'800px'} style={{marginTop: 50}}></Image>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">Solutions existantes</Heading>
@@ -184,13 +159,15 @@ export default class Presentation extends React.Component {
                     <Text style={{marginTop: 50}}>Souvent peu partagées car trop spécifiques à un projet, une équipe ou un client</Text>
                     <Text style={{marginTop: 50}}>Nécessite souvent un déploiement, sauf si anticipé</Text>
                 </Slide>
-                <Slide bgColor="white">
-                    <Heading size={2} caps textColor="black">Solutions SaaS</Heading>
-                    <Text style={{marginTop: 50}}>Transifex, PhraseApp, PoEditor ... (+ TextMaster pour la l10n)</Text>
-                    <Text style={{marginTop: 50}}>👍 pour la gestion externe des clés/messages</Text>
-                    <Text style={{marginTop: 50}}>🤔 Mais comment lier ça avec notre application ?</Text>
+                <Slide bgColor="white" notes="comment lier ça avec notre application ? <br> 👍 pour la gestion externe des clés/messages <br> Transifex, PhraseApp, PoEditor">
+                    <Layout>
+                        <Fill>
+                            <Heading size={3} caps textColor="black">Solutions SaaS</Heading>
+                            <Image src={images.loco}/>
+                        </Fill>
+                    </Layout>
                 </Slide>
-                <Slide bgColor="white">
+                <Slide bgColor="white" notes="VITE ! résumer 1ere et dernière colonne">
                     <Heading size={2} caps textColor="black">Packages PHP et Bundles Symfony</Heading>
                     <Image src={images.comparatif} style={{marginTop: 50, width: '100%'}} />
                 </Slide>

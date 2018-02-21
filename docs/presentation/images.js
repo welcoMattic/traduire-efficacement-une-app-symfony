@@ -6,6 +6,7 @@ const images = {
     sflive: require('../assets/images/sflive.png'),
     symfony: require('../assets/images/symfony.svg'),
     comparatif: require('../assets/images/comparatif.png'),
+    loco: require('../assets/images/loco.png'),
 
     // gif
     omg: require('../assets/images/omg.gif'),
