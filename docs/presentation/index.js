@@ -187,12 +187,12 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">Solutions SaaS</Heading>
                     <Text style={{marginTop: 50}}>Transifex, PhraseApp, PoEditor ... (+ TextMaster pour la l10n)</Text>
-                    <Text style={{marginTop: 50}}>👍 pour la gestion externe des clé/messages</Text>
+                    <Text style={{marginTop: 50}}>👍 pour la gestion externe des clés/messages</Text>
                     <Text style={{marginTop: 50}}>🤔 Mais comment lier ça avec notre application ?</Text>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">Packages PHP et Bundles Symfony</Heading>
-                    <Image src={images.comparatif} style={{marginTop: 50}} />
+                    <Image src={images.comparatif} style={{marginTop: 50, width: '100%'}} />
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">L'Organisation</Heading>
@@ -200,7 +200,7 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Outils PHP pour la gestion de l'i18n</Heading>
-                    <Text style={{marginTop: 50}}>Interface et classes communes pour tous les outils</Text>
+                    <Text style={{marginTop: 50}}>Interfaces et classes communes pour tous les outils</Text>
                     <List style={{width: '900px', margin: '50px auto'}}>
                         <ListItem padding={"20px 0"}>Message</ListItem>
                         <ListItem padding={"20px 0"}>Extractor</ListItem>
@@ -212,7 +212,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps textColor="black">php–translation</Heading>
                     <List style={{marginTop: 50}}>
                         <ListItem padding={"20px 0"}>Support de plusieurs SaaS comme Transifex, Loco, PhraseApp</ListItem>
-                        <ListItem padding={"20px 0"}>Framework agnostic : Package PHP, bundle Symfony, package Laravel ...</ListItem>
+                        <ListItem padding={"20px 0"}>Framework agnostic: Package PHP, bundle Symfony, package Laravel ...</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
@@ -220,9 +220,36 @@ export default class Presentation extends React.Component {
                     <List style={{marginTop: 50}}>
                         <ListItem padding={"20px 0"}>Basé sur le composant Translator</ListItem>
                         <ListItem padding={"20px 0"}>Configuration de Storages (SaaS, fichiers locaux ...)</ListItem>
-                        <ListItem padding={"20px 0"}>Outils d'édition des messages (Intégré au Profiler, WebUI dédiée, EditInPlace)</ListItem>
                         <ListItem padding={"20px 0"}>Commandes (extract, download, sync, status)</ListItem>
+                        <ListItem padding={"20px 0"}>Outils d'édition des messages (Intégré au Profiler, WebUI dédiée, EditInPlace)</ListItem>
                     </List>
+                </Slide>
+                <Slide bgColor="white">
+                    <Heading size={3} caps textColor="black">Profiler</Heading>
+                    <Layout>
+                        <Fill>
+                            <Image src={images.profiler}/>
+                        </Fill>
+                        <Fill>
+                            <Image src={images.edit}/>
+                        </Fill>
+                    </Layout>
+                </Slide>
+                <Slide bgColor="white">
+                    <Heading size={3} caps textColor="black">Edit In Place</Heading>
+                    <Layout>
+                        <Fill>
+                            <Image src={images.editinplace}/>
+                        </Fill>
+                    </Layout>
+                </Slide>
+                <Slide bgColor="white">
+                    <Heading size={3} caps textColor="black">Exemple de config</Heading>
+                    <CodePane lang="yaml" style={{fontSize: 18, marginTop: '50px'}}
+                        source={require(
+                            "raw-loader!../assets/code/php-translation.yaml"
+                        )}
+                    />
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">SaaS + php–translation = 😍</Heading>
@@ -236,7 +263,7 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Il en reste</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>🖥 Solution frontend</ListItem>
+                        <ListItem padding={"20px 0"}>🖥 Solution frontend (BazingaJsTranslationBundle ?)</ListItem>
                         <ListItem padding={"20px 0"}>💥 Gestion du cache: <Link href={"https://github.com/php-translation/symfony-bundle/issues/198"} target={"_blank"}>Issue #198 sur le bundle Symfony.</Link></ListItem>
                         <ListItem padding={"20px 0"}>🛣 i18n des routes: <Link href={"https://github.com/symfony/symfony/pull/26143"} target={"_blank"}>PR #26143 ouverte dans Symfony</Link> \o/</ListItem>
                     </List>
@@ -245,13 +272,13 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps textColor="black">Si on va encore plus loin</Heading>
                     <List>
                         <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters (lingohub, poeditor, redis, propel, doctrine ...)</ListItem>
-                        <ListItem padding={"20px 0"}>Évolution des outils d'éditon (Profiler notamment)</ListItem>
+                        <ListItem padding={"20px 0"}>Évolution des outils d'édition (Profiler notamment)</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} caps textColor="black">Résumé</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>Développeurs : création de clés, envoi sur le SaaS</ListItem>
+                        <ListItem padding={"20px 0"}>Développeurs: création de clés, envoi sur le SaaS</ListItem>
                         <ListItem padding={"20px 0"}>Traducteurs: traduction des clés en messages</ListItem>
                         <ListItem padding={"20px 0"}>Cron en dev|preprod|prod pour télécharger depuis le SaaS</ListItem>
                     </List>
@@ -262,7 +289,7 @@ export default class Presentation extends React.Component {
                     <List>
                         <ListItem padding={"20px 0"}>Choisir un SaaS</ListItem>
                         <ListItem padding={"20px 0"}>Installer php–translation/symfony–bundle</ListItem>
-                        <ListItem padding={"20px 0"}>Utiliser ou créer un Storage Adapater</ListItem>
+                        <ListItem padding={"20px 0"}>Utiliser ou créer un Storage Adapter</ListItem>
                         <ListItem padding={"20px 0"}>Expliquer à l'équipe le workflow et les outils</ListItem>
                     </List>
                 </Slide>

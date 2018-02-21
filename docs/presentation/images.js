@@ -8,8 +8,11 @@ const images = {
     comparatif: require('../assets/images/comparatif.png'),
 
     // gif
-    putain: require('../assets/images/oh-putain.gif'),
+    omg: require('../assets/images/omg.gif'),
     mic: require('../assets/images/mic-drop.gif'),
+    profiler: require('../assets/images/01-php-translation-send-all.gif'),
+    edit: require('../assets/images/02-php-translation-edit-one.gif'),
+    editinplace: require('../assets/images/03-edit-in-place-demo.gif'),
 };
 
 export default images;

@@ -1,0 +1,14 @@
+translation:
+    locales: ['en', 'fr']
+    configs:
+        app:
+            dirs: ['%kernel.project_dir%/src','%kernel.project_dir%/templates']
+            output_dir: '%kernel.project_dir%/translations'
+            excluded_names: ['*TestCase.php', '*Test.php']
+            excluded_dirs: [cache, data, logs]
+            remote_storage: ['php_translation.adapter.loco']
+
+translation_adapter_loco:
+    projects:
+        messages:
+            api_key: '%env(LOCO_API_KEY)%'
