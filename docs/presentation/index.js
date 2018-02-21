@@ -93,12 +93,18 @@ export default class Presentation extends React.Component {
                     <Text style={{marginTop: 100}}>Wordpress, Drupal ...</Text>
                 </Slide>
                 <Slide bgColor="white">
-                    <Text><S type="bold">Recommandation aux développeurs de modules/plugins :</S></Text>
-                    <List>
-                        <ListItem padding={"20px 0"}>i18n leur code</ListItem>
-                        <ListItem padding={"20px 0"}>l10n dans au moins 1 langue (anglais)</ListItem>
-                    </List>
-                    <Text style={{marginTop: 50}}><S type="bold">Les 2 disposent d'1 plateforme de contribution pour la l10n</S></Text>
+                    <Text><S type="bold">Recommandations aux développeurs de modules/plugins :</S></Text>
+                    <Layout>
+                        <Fill>
+                            <List>
+                                <ListItem padding={"20px 0"}>i18n leur code</ListItem>
+                                <ListItem padding={"20px 0"}>l10n dans au moins une langue (anglais)</ListItem>
+                            </List>
+                        </Fill>
+                    </Layout>
+                </Slide>
+                <Slide bgColor="white">
+                    <Text style={{marginTop: 50}}><S type="bold">Chacun a une plateforme de contribution pour la l10n</S></Text>
                     <List>
                         <ListItem padding={"20px 0"}>
                             <Link href={"https://translate.wordpress.org/"} target={"_blank"}>https://translate.wordpress.org/</Link>
@@ -115,50 +121,63 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <Slide bgColor="white" notes="pas tous techniques">
                     <Heading size={1} style={{marginBottom: 50}}>👥 🗣 👤</Heading>
-                    <Heading size={1} caps textColor="black">Beaucoup d'intervenants</Heading>
-                    <List>
-                        <ListItem padding={"20px 0"}>Développeurs</ListItem>
-                        <ListItem padding={"20px 0"}>Traducteurs</ListItem>
-                        <ListItem padding={"20px 0"}>Chefs de projet</ListItem>
-                        <ListItem padding={"20px 0"}>Testeurs</ListItem>
-                        <ListItem padding={"20px 0"}>Rédacteurs</ListItem>
-                        <ListItem padding={"20px 0"}>...</ListItem>
-                    </List>
+                    <Heading size={3} caps textColor="black">Beaucoup d'intervenants</Heading>
+                    <Layout>
+                        <Fill>
+                            <List>
+                                <ListItem padding={"20px 0"}>Développeurs</ListItem>
+                                <ListItem padding={"20px 0"}>Traducteurs</ListItem>
+                                <ListItem padding={"20px 0"}>Chefs de projet</ListItem>
+                            </List>
+                        </Fill>
+                        <Fill>
+                            <List>
+                                <ListItem padding={"20px 0"}>Testeurs</ListItem>
+                                <ListItem padding={"20px 0"}>Rédacteurs</ListItem>
+                            </List>
+                        </Fill>
+                    </Layout>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} style={{marginBottom: 50}}>📝</Heading>
-                    <Heading size={1} caps textColor="black">Gestion des messages</Heading>
+                    <Heading size={2} caps textColor="black">Gestion des messages</Heading>
                     <List>
                         <ListItem padding={"20px 0"}>Convention de nommage des clés</ListItem>
                         <ListItem padding={"20px 0"}>Responsabilité de l'ajout de nouvelles clés</ListItem>
                         <ListItem padding={"20px 0"}>Synchronisation entre le code et la traduction d'une feature</ListItem>
-                        <ListItem padding={"20px 0"}>...</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} style={{marginBottom: 50}}>🔄</Heading>
-                    <Heading size={2} caps textColor="black">Versioning des messages</Heading>
-                    <List>
-                        <ListItem padding={"20px 0"}>SaaS</ListItem>
-                        <ListItem padding={"20px 0"}>Fichiers de traduction dans Symfony</ListItem>
-                        <ListItem padding={"20px 0"}>CSV sur un FTP 😰</ListItem>
-                        <ListItem padding={"20px 0"}>Fichier Excel baladé par PJ dans un email 😱</ListItem>
-                        <ListItem padding={"20px 0"}>...</ListItem>
-                    </List>
+                    <Heading size={3} caps textColor="black">Versioning des messages</Heading>
+                    <Layout>
+                        <Fill>
+                            <List>
+                                <ListItem padding={"20px 0"}>😎 SaaS</ListItem>
+                                <ListItem padding={"20px 0"}>😊 Fichiers .xliff dans Symfony</ListItem>
+                            </List>
+                        </Fill>
+                        <Fill>
+                            <List>
+                                <ListItem padding={"20px 0"}>😰 CSV sur un FTP</ListItem>
+                                <ListItem padding={"20px 0"}>😱 Excel en PJ d'un email</ListItem>
+                            </List>
+                        </Fill>
+                    </Layout>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} style={{marginBottom: 50}}>🖥</Heading>
-                    <Heading size={2} caps textColor="black">Accès aux messages depuis le frontend</Heading>
+                    <Heading size={2} caps textColor="black">Accès aux messages depuis le frontend ?</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>On met tous dans un gros objet JS ?</ListItem>
+                        <ListItem padding={"20px 0"}>On met tout dans un gros objet JS 🤔</ListItem>
                         <ListItem padding={"20px 0"}>Leak d'infos sensibles 🔓</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
-                    <Image src={images.putain} width={'600px'} style={{marginTop: 50}}></Image>
+                    <Image src={images.putain} width={'800px'} style={{marginTop: 50}}></Image>
                 </Slide>
                 <Slide bgColor="white">
-                    <Heading size={1} caps textColor="black">Solutions existantes</Heading>
+                    <Heading size={2} caps textColor="black">Solutions existantes</Heading>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">Solutions "maison"</Heading>
@@ -169,11 +188,11 @@ export default class Presentation extends React.Component {
                     <Heading size={2} caps textColor="black">Solutions SaaS</Heading>
                     <Text style={{marginTop: 50}}>Transifex, PhraseApp, PoEditor ... (+ TextMaster pour la l10n)</Text>
                     <Text style={{marginTop: 50}}>👍 pour la gestion externe des clé/messages</Text>
-                    <Text style={{marginTop: 50}}>Mais comment lier ça avec notre application ? 🤔</Text>
+                    <Text style={{marginTop: 50}}>🤔 Mais comment lier ça avec notre application ?</Text>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">Packages PHP et Bundles Symfony</Heading>
-                    <Image src={images.comparatif}/>
+                    <Image src={images.comparatif} style={{marginTop: 50}} />
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={2} caps textColor="black">L'Organisation</Heading>
@@ -182,7 +201,7 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Outils PHP pour la gestion de l'i18n</Heading>
                     <Text style={{marginTop: 50}}>Interface et classes communes pour tous les outils</Text>
-                    <List>
+                    <List style={{width: '900px', margin: '50px auto'}}>
                         <ListItem padding={"20px 0"}>Message</ListItem>
                         <ListItem padding={"20px 0"}>Extractor</ListItem>
                         <ListItem padding={"20px 0"}>Storage Adapter</ListItem>
@@ -208,58 +227,57 @@ export default class Presentation extends React.Component {
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">SaaS + php–translation = 😍</Heading>
                     <Heading size={4} caps textColor="black" style={{marginTop: 50}}>On règle les problèmes</Heading>
-                    <List>
-                        <ListItem padding={"20px 0"}>Stockage: on stocke sur le SaaS <strong>et</strong> on synchronise les fichiers locaux (*.xliff)</ListItem>
-                        <ListItem padding={"20px 0"}>Édition des messages: chaque intervenant à son outil (Profiler pour les développeurs, SaaS pour les traducteurs ...)</ListItem>
-                        <ListItem padding={"20px 0"}>On supprime la dépendance aux développeurs pour mettre à jour les messages, pull régulier de la prod sur le SaaS</ListItem>
+                    <List style={{width: '1000px', margin: '50px auto'}}>
+                        <ListItem padding={"20px 0"}>Stockage:  SaaS <strong>et</strong> fichiers locaux (*.xliff)</ListItem>
+                        <ListItem padding={"20px 0"}>Édition des messages: chacun son outil</ListItem>
+                        <ListItem padding={"20px 0"}>Indépendance vis-à-vis des développeurs</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Il en reste</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>💥 Gestion du cache: <Link href={"https://github.com/php-translation/symfony-bundle/issues/198"} target={"_blank"}>Issue sur le bundle Symfony.</Link></ListItem>
-                        <ListItem padding={"20px 0"}>🖥 Trouver une solution pour les frontend: export dans un objet JS, route ajax qui sert un JSON par langue ?</ListItem>
-                        <ListItem padding={"20px 0"}>🛣 i18n des routes: PR ouverte dans Symfony \o/</ListItem>
+                        <ListItem padding={"20px 0"}>🖥 Solution frontend</ListItem>
+                        <ListItem padding={"20px 0"}>💥 Gestion du cache: <Link href={"https://github.com/php-translation/symfony-bundle/issues/198"} target={"_blank"}>Issue #198 sur le bundle Symfony.</Link></ListItem>
+                        <ListItem padding={"20px 0"}>🛣 i18n des routes: <Link href={"https://github.com/symfony/symfony/pull/26143"} target={"_blank"}>PR #26143 ouverte dans Symfony</Link> \o/</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">Si on va encore plus loin</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters à php–translation (lingohub, poeditor, redis, propel, doctrine ...)</ListItem>
-                        <ListItem padding={"20px 0"}>Faire évoluer les outils d'éditon (Profiler notamment)</ListItem>
+                        <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters (lingohub, poeditor, redis, propel, doctrine ...)</ListItem>
+                        <ListItem padding={"20px 0"}>Évolution des outils d'éditon (Profiler notamment)</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} caps textColor="black">Résumé</Heading>
                     <List>
-                        <ListItem padding={"20px 0"}>Les développeurs crééent de nouvelles clés nommées proprement dans le code</ListItem>
-                        <ListItem padding={"20px 0"}>Ils les envoient sur le SaaS <strong>et</strong> dans les .xliff de Symfony</ListItem>
-                        <ListItem padding={"20px 0"}>Les traducteurs traduisent les clés en messages depuis le SaaS</ListItem>
-                        <ListItem padding={"20px 0"}>Les développeurs téléchargent les clés/messages régulièrement sur leurs machines (commande download)</ListItem>
-                        <ListItem padding={"20px 0"}>Un cron tourne sur les environnements de prod et preprod pour télécharger régulièrement les clés/messages</ListItem>
+                        <ListItem padding={"20px 0"}>Développeurs : création de clés, envoi sur le SaaS</ListItem>
+                        <ListItem padding={"20px 0"}>Traducteurs: traduction des clés en messages</ListItem>
+                        <ListItem padding={"20px 0"}>Cron en dev|preprod|prod pour télécharger depuis le SaaS</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={1} caps textColor="black">Conclusion</Heading>
-                    <Text style={{marginTop: 50}}>Si vous avez besoin de traduire votre application</Text>
+                    <Text style={{marginTop: 50}}>Vous avez besoin de traduire votre application ?</Text>
                     <List>
-                        <ListItem padding={"20px 0"}>Choissisez un SaaS</ListItem>
-                        <ListItem padding={"20px 0"}>Installez php–translation/symfony–bundle</ListItem>
-                        <ListItem padding={"20px 0"}>Utilisez ou créez un Storage Adapater</ListItem>
-                        <ListItem padding={"20px 0"}>Expliquez à chacun l'outil qui lui est destiné et le workflow complet</ListItem>
+                        <ListItem padding={"20px 0"}>Choisir un SaaS</ListItem>
+                        <ListItem padding={"20px 0"}>Installer php–translation/symfony–bundle</ListItem>
+                        <ListItem padding={"20px 0"}>Utiliser ou créer un Storage Adapater</ListItem>
+                        <ListItem padding={"20px 0"}>Expliquer à l'équipe le workflow et les outils</ListItem>
                     </List>
                 </Slide>
                 <Slide bgColor="white">
                     <Heading size={3} caps textColor="black">ProTip ©</Heading>
-                    <Text style={{marginTop: 50, marginBottom: 100}}>Installez un cron sur votre prod</Text>
-                    <CodePane lang="php" style={{fontSize: 18}} source={"'php bin/console translation:download --cache --env=prod --no-debug > /var/log/cron.log 2>&1'"}></CodePane>
+                    <Text style={{marginTop: 50, marginBottom: 100}}>Installer un cron sur votre prod</Text>
+                    <CodePane lang="php" style={{fontSize: 24}} source={"php bin/console translation:download --cache --env=prod --no-debug > /var/log/cron.log 2>&1"}></CodePane>
                 </Slide>
                 <Slide bgColor="white">
-                    <Heading size={1} caps textColor="black">Merci !</Heading>
-                    <Image src={images.mic} width={600} style={{marginBottom: 100}}/>
-                    <Text style={{marginTop: 150}} style={{fontSize: 24}}>📝 Blog post sur le sujet: <Link href={"https://jolicode.com/blog/how-to-properly-manage-translations-in-symfony"} target={"_blank"}>https://jolicode.com/blog/how-to-properly-manage-translations-in-symfony</Link></Text>
-                    <Text style={{marginTop: 200}} style={{fontSize: 24}}>🌐 Convention de nommage des clés: <Link href={"http://php-translation.readthedocs.io/en/latest/best-practice/index.html#translation-keys"} target={"_blank"}>http://php-translation.readthedocs.io/en/latest/best-practice/index.html#translation-keys</Link></Text>
-                    <Text style={{marginTop: 200}} style={{fontSize: 24}}>📑 Slides: <Link href={"http://welcomattic.github.io/traduire-efficacement-une-app-symfony/"} target={"_blank"}>http://welcomattic.github.io/traduire-efficacement-une-app-symfony/</Link></Text>
+                    <Heading size={1} caps textColor="black" style={{marginBottom: 50}}>Merci !</Heading>
+                    <Image src={images.mic} width={600} style={{marginBottom: 50}}/>
+                    <Heading size={3} caps textColor="black" style={{marginBottom: 50}}>❓  ➡️  🍻</Heading>
+                    <Text style={{marginTop: 150}} style={{fontSize: 24}}>📝 <Link href={"https://jolicode.com/blog/how-to-properly-manage-translations-in-symfony"} target={"_blank"}>Blog post sur le sujet</Link></Text>
+                    <Text style={{marginTop: 200}} style={{fontSize: 24}}>🌐 <Link href={"http://php-translation.readthedocs.io/en/latest/best-practice/index.html#translation-keys"} target={"_blank"}>Convention de nommage des clés</Link></Text>
+                    <Text style={{marginTop: 200}} style={{fontSize: 24}}>📑 <Link href={"http://welcomattic.github.io/traduire-efficacement-une-app-symfony/"} target={"_blank"}>Slides</Link></Text>
                 </Slide>
             </Deck>
         );
