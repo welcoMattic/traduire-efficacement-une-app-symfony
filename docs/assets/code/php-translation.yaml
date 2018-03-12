@@ -10,5 +10,5 @@ translation:
 
 translation_adapter_loco:
     projects:
-        messages:
+        app:
             api_key: '%env(LOCO_API_KEY)%'
