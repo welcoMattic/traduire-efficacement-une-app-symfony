@@ -55,7 +55,7 @@ export default class Presentation extends React.Component {
                 </Slide>
                 <JoliSlide name="Mathieu Santostefano" pseudo="welcomattic" logo={images.jolicode} avatar={images.avatar} />
                 <SfLiveSlide notes="
-                    Retour d'experience sur la mise en place de traduction au sein d'un projet d'envergure
+                    Retour d'experience sur la mise en place de traduction au sein d'un projet d'envergure <br><br>
                     Comment en est-on arrivé à un workflow fluide et efficace pour tous ?
                 ">
                     <Heading size={1} style={{marginBottom: 50}}>🎁</Heading>
@@ -125,8 +125,7 @@ export default class Presentation extends React.Component {
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     [APPEAR] <br>
-                    - po, mo -> gettext: bibliothèque écrite en C utilisée pour l'i18n de programmes. Pas pour le web<br>
-
+                    - po, mo -> gettext: bibliothèque écrite en C utilisée pour l'i18n de programmes. Pas pour le web <br>
                     - xliff -> standard dans le monde la traduction. Format par défaut dans Symfony. Génial pour le web, dérivé de xml
                 ">
                     <Heading size={2} caps>Les standards</Heading>
