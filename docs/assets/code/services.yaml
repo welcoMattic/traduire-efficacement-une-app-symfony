@@ -1,0 +1,6 @@
+services:
+    App\Translator\NoTranslator:
+        class: App\Translator\NoTranslator
+        decorates: translator
+        arguments:
+            - '@app.decorating_translator.inner'

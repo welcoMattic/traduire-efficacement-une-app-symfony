@@ -1,0 +1,7 @@
+{{ 'homepage.heading'|trans }}
+
+{{ 'homepage.welcome_message'|trans({'%username%': username}) }}
+
+{{ 'hompage.paragraph0.html'|trans|raw }}
+
+{{ 'messages.count'|transchoice(messages|length) }}

@@ -10,9 +10,11 @@ const images = {
     comparatif: require('../assets/images/comparatif.png'),
     loco: require('../assets/images/loco.png'),
     versus: require('../assets/images/versus.png'),
+    table: require('../assets/images/table.png'),
+    schema: require('../assets/images/schema.png'),
 
     // gif
-    omg: require('../assets/images/omg.gif'),
+    baby: require('../assets/images/baby.gif'),
     mic: require('../assets/images/mic-drop.gif'),
     profiler: require('../assets/images/01-php-translation-send-all.gif'),
     edit: require('../assets/images/02-php-translation-edit-one.gif'),

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import queryString from 'query-string';
 import { Slide } from 'spectacle';
 import images from './images';
@@ -28,8 +29,10 @@ export default class SfLiveSlide extends React.Component {
         }
 
         if (bgColor === 'white' || bgColor === '#FFF' || bgColor === '#FFFFFF') {
-            sfLiveLogo = images.sfliveWhite;
+            sfLiveLogo = images.sfliveTransparent;
         }
+
+        console.log(this.props.align);
 
         return (
             <div>
@@ -40,9 +43,9 @@ export default class SfLiveSlide extends React.Component {
                     <div style={isPresenterMode ? {} : fullScreenStyle}>
                         <img src={sfLiveLogo} style={{
                             position: 'absolute',
-                            top: '50px',
-                            right: '50px',
-                            width: '300px',
+                            bottom: '30px',
+                            left: '30px',
+                            width: '250px',
                             zIndex: 2,
                         }}/>
                         <Slide {...this.props}>
@@ -53,4 +56,12 @@ export default class SfLiveSlide extends React.Component {
             </div>
         );
     }
+}
+
+SfLiveSlide.defaultProps = {
+    align: 'center top',
+};
+
+Slide.propTypes = {
+    align: PropTypes.string,
 }
