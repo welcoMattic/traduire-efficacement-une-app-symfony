@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Appear, CodePane, Code, Deck, Fill, Fit, Heading, Image,
     Layout, Link, ListItem, List, S, Slide, Text,
+    Table, TableHeader, TableHeaderItem, TableBody, TableRow, TableItem
 } from 'spectacle';
 import SfLiveSlide from './sfliveslide';
 
@@ -37,10 +38,10 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps textColor="black" style={{marginTop: 50}}>une application Symfony</Heading>
                     <Image src={images.sfliveTransparent} height={350} style={{marginTop: 150}}></Image>
                 </Slide>
-                <Slide bgColor="white" align={'center top'}>
+                <Slide bgColor="white" align={'center center'}>
                     <Layout>
                         <Fill>
-                            <Image src={images.avatar} display="inline" width={300}/>
+                            <Image src={images.avatar} display="inline" width={300} style={{borderRadius: '50%'}}/>
                             <Text margin={30}>
                                 <strong>@welcomattic</strong><br/>
                                 &nbsp;sur&nbsp;
@@ -60,17 +61,33 @@ export default class Presentation extends React.Component {
                         </Fill>
                     </Layout>
                 </Slide>
+                <SfLiveSlide>
+                    <Heading size={3} textColor={colors.black} >Retour d'expérience</Heading>
+                    <Layout style={{marginTop: 150}}>
+                        <Fill style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                            <Image src={images.jolicode} width={400}/>
+                        </Fill>
+                        <Fill style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+                            <Text textSize={'128px'}>&</Text>
+                        </Fill>
+                        <Fill>
+                            <Image src={images.ouibus} width={300}/>
+                        </Fill>
+                    </Layout>
+                </SfLiveSlide>
                 <SfLiveSlide notes="
                     Les 2 sont nécessaires pour traduire complètement une application. Mais gérées différemment
                 ">
                     <Heading size={3} textColor={colors.black}>Traduction de l'UI</Heading>
-                    <Image src={images.versus} width={150} style={{marginTop: 50}}/>
-                    <Heading size={3} textColor={colors.black} style={{marginTop: 50}}>Traduction du contenu</Heading>
+                    <Text textSize={'128px'}>+</Text>
+                    <Heading size={3} textColor={colors.black}>Traduction du contenu</Heading>
+                    <Text textSize={'128px'}>+</Text>
+                    <Heading size={3} textColor={colors.black}>Traduction des URL</Heading>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     Focus sur la gestion de la traduction de l'UI. Le contenu est une autre problématique, qui peut faire l'objet d'une autre conférence, qui sait ?
                 ">
-                    <Heading size={1}>🔎</Heading>
+                    <Heading size={1} style={{marginTop: 150}}>🔎</Heading>
                     <Heading size={1} textColor={colors.black} style={{marginTop: 50}}>Traduction de l'UI</Heading>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
@@ -126,13 +143,16 @@ export default class Presentation extends React.Component {
                         </Text>
                     </Appear>
                 </SfLiveSlide>
-                <SfLiveSlide bgColor={'#322931'}>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
                     <CodePane lang="html" style={{fontSize: 26}}
                               theme={'external'}
                               source={require(
                                   "raw-loader!../assets/code/messages.fr.xlf"
                               )}
                     />
+                </SfLiveSlide>
+                <SfLiveSlide align={'center center'}>
+                    <Heading size={2}>Clé ➡️ Valeur</Heading>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     [APPEAR] Quand ?<br>
@@ -152,14 +172,14 @@ export default class Presentation extends React.Component {
                     - po, mo -> gettext: bibliothèque écrite en C utilisée pour l'i18n de programmes. .mo (binaire) Pas pour le web <br>
                     - xliff -> standard dans le monde la traduction. Format par défaut dans Symfony. Recommandé pour le web, dérivé de xml
                 ">
-                    <Heading size={2} caps>Les standards</Heading>
+                    <Heading size={2}>Les standards</Heading>
                     <Layout>
                         <Appear>
                             <Fill>
                                 <Text style={{marginTop: 50}}><S type={'bold'}>Formats de fichiers</S></Text>
                                 <List style={style.listHalf}>
                                     <ListItem padding={"20px 0"}>.po, .mo (gettext)</ListItem>
-                                    <ListItem padding={"20px 0"}>.xlf (xliff)</ListItem>
+                                    <ListItem padding={"20px 0"}>.xlf (XLIFF)</ListItem>
                                 </List>
                             </Fill>
                         </Appear>
@@ -179,10 +199,12 @@ export default class Presentation extends React.Component {
                     [APPEAR] <br>
                     Ok mais comme on l'a vu, .po .mo pas adaptés pour le web. Utilisés ici pour des raisons historiques.
                 ">
-                    <Heading size={2} caps>Comment font ces CMS/CMF ?</Heading>
-                    <Layout>
+                    <Heading size={3}>Comment font ces CMS/CMF ?</Heading>
+                    <Layout style={{marginTop: 50}}>
                         <Fill>
-                            <Text style={{marginTop: 50}}><S type={'bold'}>Wordpress</S></Text>
+                            <Text style={{marginTop: 50}}>
+                                <Image src={images.wordpress} width={370}/>
+                            </Text>
                             <List style={{ width: '560px', margin: '50px auto' }}>
                                 <ListItem padding={"20px 0"}>.po</ListItem>
                                 <ListItem padding={"20px 0"}><Link href={'https://translate.wordpress.org/'}>translate.wordpress.org</Link></ListItem>
@@ -190,7 +212,9 @@ export default class Presentation extends React.Component {
                             </List>
                         </Fill>
                         <Fill>
-                            <Text style={{marginTop: 50}}><S type={'bold'}>Drupal</S></Text>
+                            <Text style={{marginTop: 50}}>
+                                <Image src={images.drupal} width={200}/>
+                            </Text>
                             <List style={{ width: '540px', margin: '50px auto' }}>
                                 <ListItem padding={"20px 0"}>.po</ListItem>
                                 <ListItem padding={"20px 0"}><Link href={'https://localize.drupal.org/'}>localize.drupal.org</Link></ListItem>
@@ -198,6 +222,20 @@ export default class Presentation extends React.Component {
                             </List>
                         </Fill>
                     </Layout>
+                </SfLiveSlide>
+                <SfLiveSlide notes="
+                    OASIS : Fondé en 1993 (SGML), consortium à but non lucratif qui défini des standards pour le développement <br><br>
+                    AMQP, KVDB, MQTT, SAML ... <br><br>
+                    Le 7 mars dernier XLIFF a été reconnu officiellement par OASIS comme un standard. <br>
+                    Ainsi que par ISO, sous la norme ISO 21720:2017
+                ">
+                    <Image src={images.symfony} width={250}/>
+                    <List style={style.list}>
+                        <ListItem padding={"20px 0"}>XLIFF recommandé</ListItem>
+                        <ListItem padding={"20px 0"}>Standard défini par le consortium <Link href={'https://www.oasis-open.org'}>OASIS</Link></ListItem>
+                        <ListItem padding={"20px 0"}>Adapté pour le développement web</ListItem>
+                        <ListItem padding={"20px 0"}>Utilisable avec les outils de l10n</ListItem>
+                    </List>
                 </SfLiveSlide>
                 <SfLiveSlide align={'center center'}>
                     <Heading size={2} caps lineHeight={2}>Quels problèmes, quelles difficultés ?</Heading>
@@ -250,7 +288,7 @@ export default class Presentation extends React.Component {
                     [APPEAR] Versionning 'propre' <br>
                     [APPEAR] Versionning 'douteux' <br>
                 ">
-                    <Heading size={1} style={{marginBottom: 50}}>🔄</Heading>
+                    <Heading size={1} style={{marginBottom: 50}}>📦</Heading>
                     <Heading size={3} caps>Stockage des messages</Heading>
                     <Layout>
                         <Appear>
@@ -264,7 +302,7 @@ export default class Presentation extends React.Component {
                         <Appear>
                             <Fill>
                                 <List style={style.listNoBulletsSmall}>
-                                    <ListItem padding={"20px 0"}>😰 CSV sur un FTP</ListItem>
+                                    <ListItem padding={"20px 0"}>😰 .csv sur un FTP</ListItem>
                                     <ListItem padding={"20px 0"}>😱 Excel en PJ d'un email</ListItem>
                                 </List>
                             </Fill>
@@ -464,7 +502,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3}>Nomenclature de clés</Heading>
                     <Image src={images.table} style={{marginTop: '50px'}}/>
                 </SfLiveSlide>
-                <SfLiveSlide bgColor={'#322931'}>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
                     <Heading size={3} textColor="papayawhip">php-translation.yaml</Heading>
                     <CodePane lang="yaml" style={{fontSize: 28, marginTop: '50px'}}
                               theme={'external'}
@@ -473,7 +511,7 @@ export default class Presentation extends React.Component {
                               )}
                     />
                 </SfLiveSlide>
-                <SfLiveSlide bgColor={'#322931'}>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
                     <Heading size={3} textColor="papayawhip">services.yaml</Heading>
                     <CodePane lang="yaml" style={{fontSize: 36, marginTop: '50px'}}
                               theme={'external'}
@@ -482,7 +520,7 @@ export default class Presentation extends React.Component {
                               )}
                     />
                 </SfLiveSlide>
-                <SfLiveSlide bgColor={'#322931'}>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
                     <Heading size={3} textColor="papayawhip">NoTranslator.php</Heading>
                     <CodePane lang="php" style={{fontSize: 28, marginTop: '50px'}}
                               theme={'external'}
@@ -491,7 +529,7 @@ export default class Presentation extends React.Component {
                               )}
                     />
                 </SfLiveSlide>
-                <SfLiveSlide bgColor={'#322931'}>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
                     <Heading size={3} textColor="papayawhip">crontab</Heading>
                     <CodePane lang="ini" style={{fontSize: 30, marginTop: '50px'}}
                               theme={'external'}

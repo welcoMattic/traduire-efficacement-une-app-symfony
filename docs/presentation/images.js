@@ -12,6 +12,9 @@ const images = {
     versus: require('../assets/images/versus.png'),
     table: require('../assets/images/table.png'),
     schema: require('../assets/images/schema.png'),
+    ouibus: require('../assets/images/ouibus.png'),
+    wordpress: require('../assets/images/wordpress.svg'),
+    drupal: require('../assets/images/drupal.png'),
 
     // gif
     baby: require('../assets/images/baby.gif'),
