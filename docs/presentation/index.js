@@ -1,8 +1,7 @@
 import React from 'react';
 import {
-    Appear, CodePane, Code, Deck, Fill, Fit, Heading, Image,
-    Layout, Link, ListItem, List, S, Slide, Text,
-    Table, TableHeader, TableHeaderItem, TableBody, TableRow, TableItem
+    Appear, CodePane, Code, Deck, Fill, Fit, Heading, Image, Notes,
+    Layout, Link, ListItem, List, S, Slide, Text, Quote,
 } from 'spectacle';
 import SfLiveSlide from './sfliveslide';
 
@@ -35,7 +34,7 @@ export default class Presentation extends React.Component {
                   bgColor={colors.white} progress="number" contentWidth={1440}>
                 <Slide align={'center top'}>
                     <Heading size={3} caps textColor="black">Traduire efficacement</Heading>
-                    <Heading size={3} caps textColor="black" style={{marginTop: 50}}>une application Symfony</Heading>
+                    <Heading size={3} caps textColor="black" style={style.mt50}>une application Symfony</Heading>
                     <Image src={images.sfliveTransparent} height={350} style={{marginTop: 150}}></Image>
                 </Slide>
                 <Slide bgColor="white" align={'center center'}>
@@ -88,7 +87,7 @@ export default class Presentation extends React.Component {
                     Focus sur la gestion de la traduction de l'UI. Le contenu est une autre problématique, qui peut faire l'objet d'une autre conférence, qui sait ?
                 ">
                     <Heading size={1} style={{marginTop: 150}}>🔎</Heading>
-                    <Heading size={1} textColor={colors.black} style={{marginTop: 50}}>Traduction de l'UI</Heading>
+                    <Heading size={1} textColor={colors.black} style={style.mt50}>Traduction de l'UI</Heading>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     Retour d'experience sur la mise en place de traduction au sein d'un projet d'envergure <br><br>
@@ -113,12 +112,13 @@ export default class Presentation extends React.Component {
                     </Appear>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
-                    L’<strong>internationalisation</strong> est une étape dans la conception et le développement d’une application qui permet une <strong>localisation</strong> facile pour les publics ciblés de culture, région et langue différentes. <br>
+                    L’<strong>internationalisation</strong> est une étape dans la conception et le développement d’une application qui permet l'adaptation plus facile à un public défini. <br>
+                    [APPEAR]
                     [APPEAR]
                 ">
                     <Heading size={3}>i18n – Internationalization</Heading>
                     <Appear>
-                        <Text style={{marginTop: 50}}>
+                        <Text style={{marginTop: 150}}>
                             Clés de traduction, formats numériques, de date, devise, mais aussi couleurs, symboles ...
                         </Text>
                     </Appear>
@@ -132,27 +132,41 @@ export default class Presentation extends React.Component {
                     </Appear>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
-                    La <strong>localisation</strong> fait référence à l’adaptation d’une application et de son contenu afin de répondre aux exigences linguistiques, culturelles ou autres d’un marché défini. <br>
+                    La <strong>localisation</strong> est l’adaptation d’une application et de son contenu dans le but de répondre aux exigences linguistiques, et culturelles d'un public défini. <br>
                     [APPEAR]
-                    Et de personnes connaissant un pays, une culture cible
                 ">
                     <Heading size={3}>l10n – Localization</Heading>
                     <Appear>
-                        <Text style={{marginTop: 50}}>
-                            Nécessite (très souvent) l'intervention de traducteurs
+                        <Text style={{marginTop: 150, lineHeight: 1.6}}>
+                            Nécessite (très souvent) l'intervention de traducteurs, <br/>
+                            et/ou de personnes natives du/des pays cibles
                         </Text>
                     </Appear>
                 </SfLiveSlide>
+                <SfLiveSlide align={'center center'}>
+                    <Heading size={2}>Clé ➡️ Valeur</Heading>
+                </SfLiveSlide>
                 <SfLiveSlide bgColor={'#2b2b2b'}>
-                    <CodePane lang="html" style={{fontSize: 26}}
+                    <CodePane lang="html" style={{fontSize: 28}}
                               theme={'external'}
                               source={require(
                                   "raw-loader!../assets/code/messages.fr.xlf"
                               )}
                     />
                 </SfLiveSlide>
-                <SfLiveSlide align={'center center'}>
-                    <Heading size={2}>Clé ➡️ Valeur</Heading>
+                <SfLiveSlide>
+                    <Notes>
+                        Pour organiser les traductions d'une app -> domaines <br/>
+                        Par défaut dans Symfony (messages, validators ...) <br/>
+                        Possiblité d'ajouter ses propres domaines (ex: admin)
+                    </Notes>
+                    <Heading size={2}>Domaines</Heading>
+                    <Text style={{fontSize: 48, marginTop: 150}}>
+                        messages, validators, routes
+                    </Text>
+                    <Text style={Object.assign({fontSize: 48}, style.mt50)}>
+                        admin, emails, invoices, ...
+                    </Text>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     [APPEAR] Quand ?<br>
@@ -176,7 +190,7 @@ export default class Presentation extends React.Component {
                     <Layout>
                         <Appear>
                             <Fill>
-                                <Text style={{marginTop: 50}}><S type={'bold'}>Formats de fichiers</S></Text>
+                                <Text style={style.mt50}><S type={'bold'}>Formats de fichiers</S></Text>
                                 <List style={style.listHalf}>
                                     <ListItem padding={"20px 0"}>.po, .mo (gettext)</ListItem>
                                     <ListItem padding={"20px 0"}>.xlf (XLIFF)</ListItem>
@@ -185,7 +199,7 @@ export default class Presentation extends React.Component {
                         </Appear>
                         <Appear>
                             <Fill>
-                                <Text style={{marginTop: 50}}><S type={'bold'}>Outils</S></Text>
+                                <Text style={style.mt50}><S type={'bold'}>Outils</S></Text>
                                 <List style={style.listHalf}>
                                     <ListItem padding={"20px 0"}>poedit (Windows, macOS, Linux)</ListItem>
                                     <ListItem padding={"20px 0"}>Services en ligne (SaaS)</ListItem>
@@ -200,9 +214,9 @@ export default class Presentation extends React.Component {
                     Ok mais comme on l'a vu, .po .mo pas adaptés pour le web. Utilisés ici pour des raisons historiques.
                 ">
                     <Heading size={3}>Comment font ces CMS/CMF ?</Heading>
-                    <Layout style={{marginTop: 50}}>
+                    <Layout style={style.mt50}>
                         <Fill>
-                            <Text style={{marginTop: 50}}>
+                            <Text style={style.mt50}>
                                 <Image src={images.wordpress} width={370}/>
                             </Text>
                             <List style={{ width: '560px', margin: '50px auto' }}>
@@ -212,7 +226,7 @@ export default class Presentation extends React.Component {
                             </List>
                         </Fill>
                         <Fill>
-                            <Text style={{marginTop: 50}}>
+                            <Text style={style.mt50}>
                                 <Image src={images.drupal} width={200}/>
                             </Text>
                             <List style={{ width: '540px', margin: '50px auto' }}>
@@ -237,8 +251,8 @@ export default class Presentation extends React.Component {
                         <ListItem padding={"20px 0"}>Utilisable avec les outils de l10n</ListItem>
                     </List>
                 </SfLiveSlide>
-                <SfLiveSlide align={'center center'}>
-                    <Heading size={2} caps lineHeight={2}>Quels problèmes, quelles difficultés ?</Heading>
+                <SfLiveSlide align={'center top'}>
+                    <Heading size={2} caps lineHeight={2} style={style.mt50}>Quels problèmes, quelles difficultés ?</Heading>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     [APPEAR] <br>
@@ -284,6 +298,15 @@ export default class Presentation extends React.Component {
                         <Appear><ListItem padding={"20px 0"}>Déploiement de correction de messages</ListItem></Appear>
                     </List>
                 </SfLiveSlide>
+                <SfLiveSlide>
+                    <Notes>
+                        C'est un problème, ça peut interrompre un sprint (ex: faute sur la landing page d'une campagne internationale) <br/>
+                    </Notes>
+                    <Heading size={2}>Déploiement</Heading>
+                    <Text style={style.mt150}>
+                        Corriger une faute = déployer l'application
+                    </Text>
+                </SfLiveSlide>
                 <SfLiveSlide notes="
                     [APPEAR] Versionning 'propre' <br>
                     [APPEAR] Versionning 'douteux' <br>
@@ -328,13 +351,18 @@ export default class Presentation extends React.Component {
                     <Image src={images.baby} height={'700px'}></Image>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
-                    Dans mon expérience, j'ai souvent vu des solutions maison qui demandaient un déploiement de la part des développeurs.
+                    Solution à ne pas choisir, il y a aujourd'hui plein (assez) d'outils. Il reste maintenant à les utiliser correctement, et ensemble. <br><br>
+                    D'autres ont tenter de concevoir leur solution maison, après tout on a un besoin fonctionnel, des outils techniques, on pourrait en faire une app à part entière.
                 ">
                     <Heading size={2} caps>Solutions "maison"</Heading>
-                    <Text style={{marginTop: 50}}>Spécifiques à un projet, une équipe ou un client</Text>
-                    <Text style={{marginTop: 50}}>Nécessite souvent un déploiement</Text>
-                    <Text style={{marginTop: 50}}>Non battle-tested</Text>
-                    <Text style={{marginTop: 50}}>Rarement industrialisable</Text>
+                    <List style={{ width: '1080px', margin: '50px auto' }}>
+                        <ListItem padding={"20px 0"}>Spécifiques à un projet, une équipe ou un client</ListItem>
+                        <ListItem padding={"20px 0"}>Non battle-tested</ListItem>
+                        <ListItem padding={"20px 0"}>Rarement industrialisable</ListItem>
+                        <Appear>
+                            <Quote style={{margin: '100px auto'}}>Y'en a qu'ont essayé ...</Quote>
+                        </Appear>
+                    </List>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     👍 pour la gestion externe des clés/messages <br>
@@ -357,32 +385,35 @@ export default class Presentation extends React.Component {
                     Chaque bundle tester ne répondait pas à tout ce dont on avait besoin. <br>
                     Sauf php-translation
                 ">
-                    <Image src={images.comparatif} style={{marginTop: 50, width: '100%'}} />
+                    <Image src={images.comparatif} style={{marginTop: 150, width: '100%'}} />
                 </SfLiveSlide>
                 <SfLiveSlide>
+                    <Notes>
+                        Merci aux maintainers ❤️
+                    </Notes>
                     <Heading size={2} caps>L'Organisation</Heading>
                     <Heading size={2} caps>PHP–Translation</Heading>
-                    <Layout style={{marginTop: 50}}>
+                    <Layout style={{marginTop: 100}}>
                         <Fill>
-                            <Image src={images.avatar} width={100}/>
-                            <Text>Tobias Noyholm</Text>
+                            <Image src={images.tobias} style={{borderRadius: '50%'}} width={150}/>
+                            <Text>Tobias Nyholm</Text>
                         </Fill>
                         <Fill>
-                            <Image src={images.avatar} width={100}/>
+                            <Image src={images.victor} style={{borderRadius: '50%'}} width={150}/>
                             <Text>Victor Bocharsky</Text>
                         </Fill>
                     </Layout>
-                    <Layout style={{marginTop: 50}}>
+                    <Layout style={style.mt50}>
                         <Fill>
-                            <Image src={images.avatar} width={100}/>
+                            <Image src={images.damienalexandre} style={{borderRadius: '50%'}} width={150}/>
                             <Text>Damien Alexandre</Text>
                         </Fill>
                         <Fill>
-                            <Image src={images.avatar} width={100}/>
+                            <Image src={images.welcomattic} style={{borderRadius: '50%'}} width={150}/>
                             <Text>Mathieu Santostefano</Text>
                         </Fill>
                         <Fill>
-                            <Image src={images.avatar} width={100}/>
+                            <Image src={images.contributors} style={{borderRadius: '50%'}} width={150}/>
                             <Text>and all contributors</Text>
                         </Fill>
                     </Layout>
@@ -399,8 +430,8 @@ export default class Presentation extends React.Component {
 
                     Translator (traduction automatique) <br>
                 ">
-                    <Heading size={3} caps>Outils PHP pour l'i18n</Heading>
-                    <Layout>
+                    <Heading size={3}>Outils PHP pour l'i18n</Heading>
+                    <Layout style={{margin: '150px auto'}}>
                         <Fill>
                             <List style={style.listHalf}>
                                 <ListItem padding={"20px 0"}>Message</ListItem>
@@ -414,28 +445,55 @@ export default class Presentation extends React.Component {
                             </List>
                         </Fill>
                     </Layout>
-                    <Appear>
-                        <div>
-                            <Heading size={3} caps></Heading>
-                            <List style={style.list}>
-                                <ListItem padding={"20px 0"}>Framework-agnostic : package PHP, bundle Symfony, package Laravel</ListItem>
-                                <ListItem padding={"20px 0"}>Support de plusieurs SaaS comme Transifex, Loco, PhraseApp</ListItem>
-                            </List>
-                        </div>
-                    </Appear>
                 </SfLiveSlide>
                 <SfLiveSlide>
-                    <Heading size={3} caps>Bundle Symfony</Heading>
+                    <Heading size={3}>Outils PHP pour l'i18n</Heading>
+                    <List style={style.list}>
+                        <ListItem padding={"50px 0"}>Framework-agnostic : package PHP, bundle Symfony, package Laravel</ListItem>
+                        <ListItem padding={"50px 0"}>Support de plusieurs SaaS comme Transifex, Loco, PhraseApp</ListItem>
+                    </List>
+                </SfLiveSlide>
+                <SfLiveSlide>
+                    <Heading size={3}>Bundle Symfony</Heading>
                     <Layout>
                         <Fill>
-                            <List style={style.list}>
-                                <ListItem padding={"20px 0"}>Configuration de Storage Adapters (SaaS, fichiers locaux ...)</ListItem>
-                                <ListItem padding={"20px 0"}>Commandes (<Code textSize={26}>extract</Code>, <Code textSize={26}>download</Code>, <Code textSize={26}>sync</Code>, <Code textSize={26}>status</Code>)</ListItem>
-                                <ListItem padding={"20px 0"}>Outils d'édition des messages (Panel Profiler, WebUI, EditInPlace)</ListItem>
+                            <List style={{ width: '1000px', margin: '150px auto' }}>
+                                <ListItem padding={"50px 0"}>Configuration de Storage Adapters (SaaS, fichiers locaux ...)</ListItem>
+                                <ListItem padding={"50px 0"}>Commandes (<Code textSize={30}>extract</Code>, <Code textSize={30}>download</Code>, <Code textSize={30}>sync</Code>, <Code textSize={30}>status</Code>)</ListItem>
+                                <ListItem padding={"50px 0"}>Outils d'édition des messages (Panel Profiler, WebUI, EditInPlace)</ListItem>
                             </List>
                         </Fill>
                     </Layout>
                 </SfLiveSlide>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
+                    <Heading size={3} textColor="papayawhip">php-translation.yaml</Heading>
+                    <CodePane lang="yaml" style={{fontSize: 28, marginTop: '50px'}} theme={'external'}
+                              source={require("raw-loader!../assets/code/php-translation.yaml")}
+                    />
+                </SfLiveSlide>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
+                    <Heading size={3} textColor="papayawhip">services.yaml</Heading>
+                    <CodePane lang="yaml" style={{fontSize: 36, marginTop: '50px'}} theme={'external'}
+                              source={require("raw-loader!../assets/code/services.yaml")}
+                    />
+                </SfLiveSlide>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
+                    <Heading size={3} textColor="papayawhip">NoTranslator.php</Heading>
+                    <CodePane lang="php" style={{fontSize: 28, marginTop: '50px'}} theme={'external'}
+                              source={require("raw-loader!../assets/code/NoTranslator.php")}
+                    />
+                </SfLiveSlide>
+                <SfLiveSlide bgColor={'#2b2b2b'}>
+                    <Notes>
+                        Permet de déployer les traductions, sans déployer le code \o/ <br/>
+                        Voir les traductions comme une resource (ex: dossier upload de média)
+                        Sync régulièrement via cron + à chaque déploiement si besoin
+                    </Notes>
+                    <Heading size={3} textColor="papayawhip">crontab</Heading>
+                    <CodePane lang="ini" style={{fontSize: 30, marginTop: '50px'}} theme={'external'}
+                              source={'*/15 * * * * php bin/console translation:download -n --cache --no-debug'}
+                    />
+                </SfLiveSlide>
                 <SfLiveSlide notes="
                     Permet l'ajout rapide des clés manquantes <br>
                     Ajout simultané dans les .xlf et sur le SaaS si configuré
@@ -443,7 +501,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps>Profiler</Heading>
                     <Layout>
                         <Fill>
-                            <Image src={images.profiler} width={1000}/>
+                            <Image src={images.profiler} style={style.mt150} width={1000}/>
                         </Fill>
                     </Layout>
                 </SfLiveSlide>
@@ -454,7 +512,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps>Profiler</Heading>
                     <Layout>
                         <Fill>
-                            <Image src={images.edit} width={1000}/>
+                            <Image src={images.edit} style={style.mt150} width={1000}/>
                         </Fill>
                     </Layout>
                 </SfLiveSlide>
@@ -468,7 +526,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps>WebUI</Heading>
                     <Layout>
                         <Fill>
-                            <Image src={images.webuiDashboard} style={{height: 600}} />
+                            <Image src={images.webuiDashboard} style={{height: 750, marginTop: 50}} />
                         </Fill>
                     </Layout>
                 </SfLiveSlide>
@@ -482,7 +540,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps>WebUI</Heading>
                     <Layout>
                         <Fill>
-                            <Image src={images.webuiPage}  style={{height: 650}} />
+                            <Image src={images.webuiPage}  style={{height: 800, marginTop: 50}} />
                         </Fill>
                     </Layout>
                 </SfLiveSlide>
@@ -500,41 +558,7 @@ export default class Presentation extends React.Component {
                 </SfLiveSlide>
                 <SfLiveSlide>
                     <Heading size={3}>Nomenclature de clés</Heading>
-                    <Image src={images.table} style={{marginTop: '50px'}}/>
-                </SfLiveSlide>
-                <SfLiveSlide bgColor={'#2b2b2b'}>
-                    <Heading size={3} textColor="papayawhip">php-translation.yaml</Heading>
-                    <CodePane lang="yaml" style={{fontSize: 28, marginTop: '50px'}}
-                              theme={'external'}
-                              source={require(
-                                  "raw-loader!../assets/code/php-translation.yaml"
-                              )}
-                    />
-                </SfLiveSlide>
-                <SfLiveSlide bgColor={'#2b2b2b'}>
-                    <Heading size={3} textColor="papayawhip">services.yaml</Heading>
-                    <CodePane lang="yaml" style={{fontSize: 36, marginTop: '50px'}}
-                              theme={'external'}
-                              source={require(
-                                  "raw-loader!../assets/code/services.yaml"
-                              )}
-                    />
-                </SfLiveSlide>
-                <SfLiveSlide bgColor={'#2b2b2b'}>
-                    <Heading size={3} textColor="papayawhip">NoTranslator.php</Heading>
-                    <CodePane lang="php" style={{fontSize: 28, marginTop: '50px'}}
-                              theme={'external'}
-                              source={require(
-                                  "raw-loader!../assets/code/NoTranslator.php"
-                              )}
-                    />
-                </SfLiveSlide>
-                <SfLiveSlide bgColor={'#2b2b2b'}>
-                    <Heading size={3} textColor="papayawhip">crontab</Heading>
-                    <CodePane lang="ini" style={{fontSize: 30, marginTop: '50px'}}
-                              theme={'external'}
-                              source={'*/15 * * * * php bin/console translation:download -n --cache --no-debug'}
-                    />
+                    <Image src={images.table} style={style.mt150} width={1200}/>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     Synchronisation des traductions indépendantes de l'environnement (dev/prod) <br><br>
@@ -552,7 +576,7 @@ export default class Presentation extends React.Component {
                     </List>
                 </SfLiveSlide>
                 <SfLiveSlide>
-                    <Image src={images.schema} width={700}/>
+                    <Image src={images.schema} width={700} style={style.mt50}/>
                 </SfLiveSlide>
                 <SfLiveSlide notes="
                     BazingaJsTranslationBundle <br>
@@ -579,15 +603,22 @@ export default class Presentation extends React.Component {
                 <SfLiveSlide notes="
                     Évolution du Profiler et WebUi
                 ">
-                    <Heading size={2} caps style={{marginBottom: 150}}>Encore plus loin ?</Heading>
+                    <Heading size={2} style={{marginBottom: 150}}>Encore plus loin ?</Heading>
                     <List style={style.list}>
-                        <ListItem padding={"20px 0"}>Ajoutez vos Storage Adapters (lingohub, poeditor, redis, doctrine ...)</ListItem>
-                        <ListItem padding={"20px 0"}>Évolution des outils d'édition</ListItem>
+                        <ListItem padding={"20px 0"}>Ajouter des Storage Adapters (lingohub, poeditor, redis, doctrine ...)</ListItem>
+                        <ListItem padding={"20px 0"}>Améliorer les outils d'édition</ListItem>
+                        <ListItem padding={"20px 0"}>Battle-tester le maximum de configurations différentes</ListItem>
                     </List>
                 </SfLiveSlide>
                 <SfLiveSlide>
+                    <Notes>
+                        Initialisez la gestion de traduction, même si le projet commence petit. <br/>
+                        Commencez sans SaaS si vous n'en n'avez pas besoin. Juste XLIFF pour démarrer. <br/>
+                        Pendant la vie du projet, agrandissement d'équipe, env de test, prod ... Ajoutez un SaaS ! <br/><br/>
+                        <strong>Introduisez les outils au fur et à mesure qu'ils se montrent nécessaires</strong>
+                    </Notes>
                     <Heading size={2} caps>À vous de jouer !</Heading>
-                    <Text style={{marginTop: 50}}>Vous devez traduire votre application</Text>
+                    <Text style={style.mt50}>Vous devez traduire votre application</Text>
                     <List style={style.list}>
                         <Appear><ListItem padding={"20px 0"}>Choisissez un SaaS</ListItem></Appear>
                         <Appear><ListItem padding={"20px 0"}><Code textSize={'30px'}>composer req php–translation/symfony–bundle</Code></ListItem></Appear>
@@ -598,9 +629,9 @@ export default class Presentation extends React.Component {
                 </SfLiveSlide>
                 <SfLiveSlide>
                     <Heading size={2} caps style={{marginBottom: 50}}>Merci !</Heading>
-                    <Image src={images.mic} width={800} style={{marginBottom: 50}}/>
-                    <Text style={{marginTop: 150}} style={{fontSize: 24}}>📝 <Link href={"https://jolicode.com/blog/how-to-properly-manage-translations-in-symfony"} target={"_blank"}>Blog post (EN) sur le sujet</Link></Text>
-                    <Text style={{marginTop: 200}} style={{fontSize: 24}}>🖥 <Link href={"http://welcomattic.github.io/traduire-efficacement-une-app-symfony/"} target={"_blank"}>JoindIn TODO</Link></Text>
+                    <Image src={images.mic} width={600}/>
+                    <Image style={style.mt50} src={images.joindin} width={350} />
+                    <Link href={'https://joind.in/talk/8c366'} style={{fontSize: 48}}>joind.in/talk/8c366</Link>
                 </SfLiveSlide>
             </Deck>
         );

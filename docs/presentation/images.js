@@ -15,6 +15,12 @@ const images = {
     ouibus: require('../assets/images/ouibus.png'),
     wordpress: require('../assets/images/wordpress.svg'),
     drupal: require('../assets/images/drupal.png'),
+    joindin: require('../assets/images/joindin.png'),
+    tobias: require('../assets/images/tobias.jpg'),
+    victor: require('../assets/images/victor.jpg'),
+    damienalexandre: require('../assets/images/damienalexandre.png'),
+    welcomattic: require('../assets/images/welcomattic.jpg'),
+    contributors: require('../assets/images/contributors.svg'),
 
     // gif
     baby: require('../assets/images/baby.gif'),
