@@ -1,0 +1,7 @@
+{{ 'homepage.heading'|trans }}
+{{ 'homepage.welcome_message'|trans({'%username%': username}) }}
+{{ 'hompage.paragraph0.html'|trans|raw }}
+{{ 'messages.count'|transchoice(messages|length) }}
+
+{{ todayDatetime|date('d/m/Y') }} {# 29/03/2018 #}
+{{ todayDatetime|date('Y-m-d') }} {# 2018-03-29 #}

@@ -1,169 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width initial-scale=1 user-scalable=no" />
-  <title>Traduire efficacement une application Symfony</title>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-  <style>
-    code[class*="language-"],
-    pre[class*="language-"] {
-      color: #f8f8f2;
-      background: none;
-      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-      text-align: left;
-      white-space: pre;
-      word-spacing: normal;
-      word-break: normal;
-      word-wrap: normal;
-      line-height: 1.5;
-
-      -moz-tab-size: 4;
-      -o-tab-size: 4;
-      tab-size: 4;
-
-      -webkit-hyphens: none;
-      -moz-hyphens: none;
-      -ms-hyphens: none;
-      hyphens: none;
-    }
-
-    /* Code blocks */
-    pre[class*="language-"] {
-      padding: 1em;
-      margin: 0.5em 0;
-      overflow: auto;
-      border-radius: 0.3em;
-    }
-
-    :not(pre) > code[class*="language-"],
-    pre[class*="language-"] {
-      background: #2b2b2b;
-    }
-
-    /* Inline code */
-    :not(pre) > code[class*="language-"] {
-      padding: 0.1em;
-      border-radius: 0.3em;
-      white-space: normal;
-    }
-
-    .token.comment,
-    .token.prolog,
-    .token.doctype,
-    .token.cdata {
-      color: #d4d0ab;
-    }
-
-    .token.punctuation {
-      color: #fefefe;
-    }
-
-    .token.property,
-    .token.tag,
-    .token.constant,
-    .token.symbol,
-    .token.deleted {
-      color: #ffa07a;
-    }
-
-    .token.boolean,
-    .token.number {
-      color: #00e0e0;
-    }
-
-    .token.selector,
-    .token.attr-name,
-    .token.string,
-    .token.char,
-    .token.builtin,
-    .token.inserted {
-      color: #abe338;
-    }
-
-    .token.operator,
-    .token.entity,
-    .token.url,
-    .language-css .token.string,
-    .style .token.string,
-    .token.variable {
-      color: #00e0e0;
-    }
-
-    .token.atrule,
-    .token.attr-value,
-    .token.function {
-      color: #ffd700;
-    }
-
-    .token.keyword {
-      color: #00e0e0;
-    }
-
-    .token.regex,
-    .token.important {
-      color: #ffd700;
-    }
-
-    .token.important,
-    .token.bold {
-      font-weight: bold;
-    }
-    .token.italic {
-      font-style: italic;
-    }
-
-    .token.entity {
-      cursor: help;
-    }
-
-    @media screen and (-ms-high-contrast: active) {
-      code[class*="language-"],
-      pre[class*="language-"] {
-        color: windowText;
-        background: window;
-      }
-
-      :not(pre) > code[class*="language-"],
-      pre[class*="language-"] {
-        background: window;
-      }
-
-      .token.important {
-        background: highlight;
-        color: window;
-        font-weight: normal;
-      }
-
-      .token.atrule,
-      .token.attr-value,
-      .token.function,
-      .token.keyword,
-      .token.operator,
-      .token.selector {
-        font-weight: bold;
-      }
-
-      .token.attr-value,
-      .token.comment,
-      .token.doctype,
-      .token.function,
-      .token.keyword,
-      .token.operator,
-      .token.property,
-      .token.string {
-        color: highlight;
-      }
-
-      .token.attr-value,
-      .token.url {
-        font-weight: normal;
-      }
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Traduire efficacement une application Symfony</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
-  <div id="root"></div>
-  <script src="./dist/bundle.js"></script>
+    <div class="container mt-5">
+        <div class="row mb-5">
+            <h1 class="display-4 mx-auto">
+                Traduire efficacement une application Symfony
+            </h1>
+        </div>
+        <div class="row justify-content-md-center">
+            <div class="col-sm-6" style="height: 450px">
+                <div class="card h-100">
+                    <img src="sflive_transparent.png" class="card-img-top p-5" alt="Logo SymfonyLive Paris 2018">
+                    <div class="card-body d-flex align-items-start flex-column">
+                        <h5 class="card-title mt-auto">Symfony Live Paris 2018</h5>
+                        <div>
+                            <a href="symfony-live-paris-2018/index.html" class="btn btn-outline-success">
+                                ✅ Slides
+                            </a>
+                            <a href="#" class="btn btn-outline-warning disabled" aria-disabled="true">⏱ <s>Vidéo</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6" style="height: 450px">
+                <div class="card h-100">
+                    <img src="phptour.png" class="card-img-top p-5" alt="Logo SymfonyLive Paris 2018">
+                    <div class="card-body d-flex align-items-start flex-column">
+                        <h5 class="card-title mt-auto">PHPTour 2018</h5>
+                        <div>
+                            <a href="phptour-2018/index.html" class="btn btn-outline-success">
+                                ✅ Slides
+                            </a>
+                            <a href="#" class="btn btn-outline-warning disabled" aria-disabled="true">⏱ <s>Vidéo</s></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -32,8 +32,6 @@ export default class SfLiveSlide extends React.Component {
             sfLiveLogo = images.sfliveTransparent;
         }
 
-        console.log(this.props.align);
-
         return (
             <div>
                 {isPresenterMode ?
