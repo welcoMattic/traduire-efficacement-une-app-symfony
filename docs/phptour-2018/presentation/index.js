@@ -143,17 +143,6 @@ export default class Presentation extends React.Component {
                         </Text>
                     </Appear>
                 </PhpTourSlide>
-                <PhpTourSlide align={'center center'}>
-                    <Heading size={2}>Clé ➡️ Valeur</Heading>
-                </PhpTourSlide>
-                <PhpTourSlide bgColor={'#2b2b2b'}>
-                    <CodePane lang="html" style={{fontSize: 28}}
-                              theme={'external'}
-                              source={require(
-                                  "raw-loader!../assets/code/messages.fr.xlf"
-                              )}
-                    />
-                </PhpTourSlide>
                 <PhpTourSlide notes="
                     [APPEAR] Quand ?<br>
                     [APPEAR] Qui, quoi ?<br>
@@ -479,7 +468,7 @@ export default class Presentation extends React.Component {
                 </PhpTourSlide>
                 <PhpTourSlide>
                     <Heading size={3}>Nomenclature de clés</Heading>
-                    <Image src={images.table} style={style.mt150} width={1200}/>
+                    <Image src={images.table} style={style.mt50} width={1200}/>
                 </PhpTourSlide>
                 <PhpTourSlide notes="
                     Synchronisation des traductions indépendantes de l'environnement (dev/prod) <br><br>
@@ -512,12 +501,12 @@ export default class Presentation extends React.Component {
                                   target={"_blank"}>php-translation/symfony-bundle #198</Link>
                         </ListItem>
                         <ListItem padding={"20px 0"}>
-                            <S type={'strikethrough'}>
-                                🛣 i18n des routes
+                            🛣 <S type={'strikethrough'}>
+                                i18n des routes
                                 <Link href={"https://github.com/symfony/symfony/pull/26143"}
                                       target={"_blank"}> PR #26143</Link>
                             </S>
-                            <Text>🎉 Merged!</Text>
+                            <Text>🎉 Symfony 4.1.0-BETA1</Text>
                         </ListItem>
                     </List>
                 </PhpTourSlide>
