@@ -21,6 +21,7 @@ const images = {
     damienalexandre: require('../assets/images/damienalexandre.png'),
     welcomattic: require('../assets/images/welcomattic.jpg'),
     contributors: require('../assets/images/contributors.svg'),
+    qrcode: require('../assets/images/qrcode.png'),
 
     // gif
     baby: require('../assets/images/baby.gif'),

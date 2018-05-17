@@ -538,10 +538,10 @@ export default class Presentation extends React.Component {
                     </List>
                 </PhpTourSlide>
                 <PhpTourSlide>
-                    <Heading size={2} caps style={{marginBottom: 50}}>Merci !</Heading>
-                    <Image src={images.mic} width={600}/>
-                    <Image style={style.mt50} src={images.avatar} width={350} />
-                    <Link href={''} style={{fontSize: 48}}>Link</Link>
+                    <Heading size={3} caps style={{marginBottom: 20}}>Merci !</Heading>
+                    <Image src={images.mic} width={500}/>
+                    <Image src={images.qrcode} width={300} />
+                    <Link href={'https://joind.in/talk/c8897'} style={{fontSize: 48}}>https://joind.in/talk/c8897</Link>
                 </PhpTourSlide>
             </Deck>
         );
