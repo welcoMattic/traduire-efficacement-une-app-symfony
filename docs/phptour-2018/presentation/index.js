@@ -33,8 +33,8 @@ export default class Presentation extends React.Component {
             <Deck theme={theme} transition={[]} textColor={colors.black} controls={null}
                   bgColor={colors.white} progress="number" contentWidth={1440}>
                 <Slide align={'center top'}>
-                    <Heading size={3} caps textColor="black">Traduire efficacement</Heading>
-                    <Heading size={3} caps textColor="black" style={style.mt50}>une application Symfony</Heading>
+                    <Heading size={3} caps textColor={colors.black}>Traduire efficacement</Heading>
+                    <Heading size={3} caps textColor={colors.black} style={style.mt50}>une application Symfony</Heading>
                     <Image src={images.phptour} height={350} style={{marginTop: 150}}/>
                 </Slide>
                 <Slide bgColor="white" align={'center center'}>
@@ -59,6 +59,13 @@ export default class Presentation extends React.Component {
                             <Image src={images.jolicode} display="inline" margin={50}/>
                         </Fill>
                     </Layout>
+                    <Text>
+                        <marquee behavior="alternate" scrolldelay="60">
+                            <code>&lt;marquee&gt;</code>
+                            On recrute 😘
+                            <code>&lt;/marquee&gt;</code>
+                        </marquee>
+                    </Text>
                 </Slide>
                 <PhpTourSlide>
                     <Heading size={3} textColor={colors.black} >Retour d'expérience</Heading>
@@ -541,7 +548,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps style={{marginBottom: 20}}>Merci !</Heading>
                     <Image src={images.mic} width={500}/>
                     <Image src={images.qrcode} width={300} />
-                    <Link href={'https://joind.in/talk/c8897'} style={{fontSize: 48}}>https://joind.in/talk/c8897</Link>
+                    <Link href={'https://joind.in/talk/0ee3c'} style={{fontSize: 48}}>https://joind.in/talk/0ee3c</Link>
                 </PhpTourSlide>
             </Deck>
         );

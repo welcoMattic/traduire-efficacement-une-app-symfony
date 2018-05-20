@@ -24,7 +24,7 @@ export default class PhpTourSlide extends React.Component {
         let phptourLogo = images.phptour;
 
         return (
-            <div>
+            <div style={isPresenterMode ? {maxWidth: '100%'} : {}}>
                 {isPresenterMode ?
                     <Slide {...this.props}>
                         {this.props.children}

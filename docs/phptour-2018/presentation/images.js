@@ -22,6 +22,7 @@ const images = {
     welcomattic: require('../assets/images/welcomattic.jpg'),
     contributors: require('../assets/images/contributors.svg'),
     qrcode: require('../assets/images/qrcode.png'),
+    montpellier: require('../assets/images/montpellier.png'),
 
     // gif
     baby: require('../assets/images/baby.gif'),
