@@ -469,7 +469,7 @@ export default class Presentation extends React.Component {
 
                     Voyons maintenant comment régler la plupart de ces problèmes !
                 ">
-                    <Image src={images.baby} height={'600px'} />
+                    <Image src={images.nope} height={'600px'} />
                 </Slide>
                 <Slide
                     notes="
@@ -558,7 +558,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3}>Outils PHP pour l'i18n</Heading>
                     <Layout style={{ margin: '100px auto' }}>
                         <Fill>
-                            <List style={style.listHalf}>
+                            <List style={{ width: '480px', margin: '50px auto 50px 250px' }}>
                                 <ListItem padding={'20px 0'}>Message</ListItem>
                                 <ListItem padding={'20px 0'}>Extractor</ListItem>
                             </List>
@@ -586,11 +586,11 @@ export default class Presentation extends React.Component {
                     <Heading size={3}>Bundle Symfony</Heading>
                     <Layout>
                         <Fill>
-                            <List style={{ width: '1000px', margin: '100px auto' }}>
-                                <ListItem padding={'50px 0'}>
+                            <List style={{ width: '1100px', margin: '100px auto' }}>
+                                <ListItem padding={'30px 0'}>
                                     Configuration de Storage Adapters (SaaS, fichiers locaux ...)
                                 </ListItem>
-                                <ListItem padding={'50px 0'}>
+                                <ListItem padding={'30px 0'}>
                                     Commandes (<Code textSize={30}>extract</Code>,{' '}
                                     <Code textSize={30}>download</Code>,{' '}
                                     <Code textSize={30}>sync</Code>,{' '}
@@ -856,7 +856,7 @@ export default class Presentation extends React.Component {
                     <Heading size={3} caps style={{ marginBottom: 20 }}>
                         Merci !
                     </Heading>
-                    <Image src={images.mic} width={700} />
+                    <Image src={images.mic} width={800} />
                     <Text style={{ fontSize: 48 }}>
                         <Link
                             href={'http://bit.ly/meetup-php-lausanne-traduction'}

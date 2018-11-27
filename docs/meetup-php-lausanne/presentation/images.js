@@ -23,6 +23,7 @@ const images = {
 
     // gif
     baby: require('../assets/images/baby.gif'),
+    nope: require('../assets/images/nope.gif'),
     mic: require('../assets/images/mic-drop.gif'),
     profiler: require('../assets/images/01-php-translation-send-all.gif'),
     edit: require('../assets/images/02-php-translation-edit-one.gif'),
